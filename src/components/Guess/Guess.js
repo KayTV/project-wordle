@@ -17,9 +17,9 @@ function Guess({guessArr}) {
   }
   console.log(guessArr)
   return <>
-    <div class="guess-results">
+    <div className="guess-results">
       {[...Array(NUM_OF_GUESSES_ALLOWED)].map((e, i) => (
-        <p class="guess" key={i}>
+        <p className="guess" key={i}>
           <span className={"cell " + guessFunctionColor(i, 0)}>{guessFunctionLetter(i, 0)}</span>
           <span className={"cell " + guessFunctionColor(i, 1)}>{guessFunctionLetter(i, 1)}</span>
           <span className={"cell " + guessFunctionColor(i, 2)}>{guessFunctionLetter(i, 2)}</span>

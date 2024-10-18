@@ -42,7 +42,7 @@ function Game() {
 
   function bannerMessage() {
     if (winBanner) {
-      return <div class="happy banner">
+      return <div className="happy banner">
               <p>
                 <strong>Congratulations!</strong> Got it in
                 <strong> {guess.length} guesses</strong>.
@@ -50,7 +50,7 @@ function Game() {
             </div>
     }
     if (loseBanner) {
-      return <div class="sad banner">
+      return <div className="sad banner">
               <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
             </div>
     }
@@ -58,11 +58,11 @@ function Game() {
   }
 
   return <>
-    {/* <div class="guess-results">
+    {/* <div className="guess-results">
       {guess.map((value) => (
-        <p class="guess">
+        <p className="guess">
           {value.split('').map((letter)=> (
-            <span class="cell">{letter}</span>
+            <span className="cell">{letter}</span>
           ))}
         </p>
       ))}

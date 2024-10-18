@@ -3,22 +3,23 @@ import React from 'react';
 function Input({handleGuess}) {
   const [input, setInput] = React.useState();
 
+  function handleSubmit(event) {
+    event.preventDefault()
+    handleGuess(input)
+    setInput('')
+  }
+
   return <div>
-    <form class="guess-input-wrapper">
-      <label for="guess-input">Enter guess:</label>
+    <form onSubmit={handleSubmit} className="guess-input-wrapper">
+      <label htmlFor="guess-input">Enter guess:</label>
       <input id="guess-input" 
              type="text"
+             required
+             minLength={5}
              maxLength={5}
              value={input}
              onChange={event => {
               setInput(event.target.value.toUpperCase())
-            }}
-             onKeyDown={event => {
-              if (event.key === 'Enter') {
-                event.preventDefault()
-                handleGuess(event.target.value)
-                setInput('')
-              }
             }} />
     </form>
     <div>{input}</div>
